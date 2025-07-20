@@ -67,7 +67,7 @@ Create your first dataset in under **5 minutes**.
 
 The script interface will appear with the following options:
 
-![Script Interface]([https://github.com/VicDc/AI-Dataset-Augmenter/blob/04e0c99bd7f943c572675e4b5b323dfb1947605c/Screenshot%202025-07-17_imageAI.png])
+![Script Interface](https://github.com/VicDc/AI-Dataset-Augmenter/blob/04e0c99bd7f943c572675e4b5b323dfb1947605c/Screenshot%202025-07-17_imageAI.png)
 
 - **Source File:** Choose your input image.  
   💡 *Tip: Use a centered square image (1:1 aspect ratio) for best results.*
