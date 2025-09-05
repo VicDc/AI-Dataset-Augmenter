@@ -1,94 +1,101 @@
-# 🇬🇧 Image AI Dataset Augmenter
+# 🇬🇧 # **🖼️ Image Augmentation Scripts for Photoshop & GIMP**
 
-**Image AI Dataset Augmenter** is an Adobe Photoshop script that transforms how you prepare image data for artificial intelligence.
+A collection of scripts for **image dataset augmentation** through batch processing. These tools mirror each other's functionality, offering a powerful workflow for users of both **Adobe Photoshop** and **GIMP**.
 
----
+The goal is to apply a series of transformations and filters to entire folders of images, generating multiple unique copies to prepare datasets for machine learning tasks or creative purposes.
 
-## 📚 Table of Contents
+## **✨ Main Features**
 
-- [🚀 The Mission](#-the-mission)
-- [⚙️ 60-Second Installation](#-60-second-installation)
-- [✨ Quickstart Guide: Your First Augmented Dataset](#-quickstart-guide-your-first-augmented-dataset)
-- [💡 Use Cases: From Idea to Implementation](#-use-cases-from-idea-to-implementation)
-  - [Case 1: Industrial Robotic Vision](#case-1-industrial-robotic-vision)
-  - [Case 2: Advanced Symbol Recognition (OCR+)](#case-2-advanced-symbol-recognition-ocr)
-- [🧠 Pro-Tips & Frequently Asked Questions (FAQ)](#-pro-tips--frequently-asked-questions-faq)
+* **Intuitive Graphical Interface:** Easy to use without writing code or commands.
+* **Batch Processing:** Processes all images in a source folder, including subfolders.
+* **Available Augmentations:**
+  + **📐 Geometric:** Resize, Crop (by aspect ratio), Rotate, Flip (Horizontal/Vertical), Shear.
+  + **🎨 Filters:** Blur, Noise, Brightness, Exposure.
+  + **🎭 Other:** Cutout (applies a random black area).
+* **Multiple Outputs:** Generates a chosen number of augmented copies for each source image.
+* **Flexible Naming:** Add custom prefixes and suffixes to the output filenames.
+* **Multiple Formats:** Save the processed images as JPEG, PNG, TIFF, or PSD.
 
----
+## **Adobe Photoshop (.jsx)**
 
-## 🚀 The Mission
+A version for users of the Adobe ecosystem, written in ExtendScript (.jsx).
 
-### The Problem: AI is Data-Hungry
+### **📋 Prerequisites**
 
-Every computer vision model—from the simplest to the most complex—needs one key ingredient: a **massive amount of high-quality training data**.  
-Training an AI to recognize an object in any condition (rotation, scale, lighting, etc.) requires **thousands** of varied images.
+* Photoshop.
 
-### The Solution: Multiply Your Reality
+### **🚀 How to Use**
 
-**Image AI Dataset Augmenter** is your shortcut. This Photoshop script takes a single source image and generates **hundreds of realistic variations** through random but controlled transformations.
+The script does not require installation. To run it:
 
-It helps your AI model **generalize** and perform better in real-world scenarios.
+1. Open Adobe Photoshop.
+2. Go to the menu **File > Scripts > Browse...**.
+3. Select the \_Photoshop Image\_Augmentation Processor.jsx file and click **Open**.
+4. The script's dialog window will open, ready to be configured.
+![Script Interface](https://github.com/VicDc/AI-Dataset-Augmenter/blob/04e0c99bd7f943c572675e4b5b323dfb1947605c/Image Augmentation Scripts for Photoshop & GIMP.png)
+## **GIMP (.py)**
 
-Perfect for:
-- AI Developers
-- Computer Vision Researchers
-- Students & Educators
-- Makers & Hobbyists
+An open-source version for GIMP users, written in Python.
 
----
+### **📋 Prerequisites**
 
-## ⚙️ 60-Second Installation
+* GIMP.
 
-1. **Copy the Code:** Get the full source of the `.jsx` script from this repository.
-2. **Create the File:**
-   - Open any text editor (Notepad++, TextEdit, VS Code, etc.)
-   - Paste the code.
-   - Save the file as `Image_AI_Dataset_Augmenter.jsx`
+### **🚀 Installation and Use**
 
-⚠️ **Important:** Ensure the file extension is `.jsx`, *not* `.txt`.
+#### **1. Install the Plug-in**
 
-You’re done! Ready to go.
+1. Find the GIMP plug-ins folder on your system:
+   * **Windows:** C:\Users\[YOUR\_USERNAME]\AppData\Roaming\GIMP\[VERSION]\plug-ins
+   * **macOS:** ~/Library/Application Support/GIMP/[VERSION]/plug-ins
+   * **Linux:** ~/.config/GIMP/[VERSION]/plug-ins
+2. Copy the image\_augmentation\_processor.py file into this folder.
+3. Restart GIMP. The plug-in will be loaded automatically.
 
----
+#### **2. Run the Plug-in**
 
-## ✨ Quickstart Guide: Your First Augmented Dataset
+1. Open GIMP.
+2. Go to the menu **File > Batch > Image Processor and Augmenter...**
+3. The plug-in's dialog window will open, ready to be configured.
 
-Create your first dataset in under **5 minutes**.
+## **⚙️ Configuration Guide (Identical for Both Versions)**
 
-### Step 1: Prepare Your Environment
-- Open **Adobe Photoshop**
-- Close all open documents to avoid script interference.
+The interface is divided into 5 sections:
 
-### Step 2: Run the Script
-- Go to `File > Scripts > Browse...`
-- Select `Image_AI_Dataset_Augmenter.jsx`
+### **1. Source Folder**
 
-### Step 3: Configure the Generation
+* **Browse...:** Select the folder containing the original images.
+* **Include subfolders:** Check this box to also process images in subfolders.
 
-The script interface will appear with the following options:
+### **2. Destination Folder**
 
-![Script Interface](https://github.com/VicDc/AI-Dataset-Augmenter/blob/04e0c99bd7f943c572675e4b5b323dfb1947605c/Screenshot%202025-07-17_imageAI.png)
+* **Browse...:** Select the folder where the processed images will be saved.
+* **Keep folder structure:** If checked, the source's subfolder structure will be replicated in the destination.
 
-- **Source File:** Choose your input image.  
-  💡 *Tip: Use a centered square image (1:1 aspect ratio) for best results.*
+### **3. Basic Transformations**
 
-- **Output Options:**
-  - `Prefix`: e.g., `bolt_v1_`
-  - `Number of Versions`: e.g., `100`
-  - `Format`: PNG (preserves transparency) or JPG (smaller size)
+Set the geometric transformations to be applied to all images:
 
-- **Random Transformations:**
-  - `Rotation`: e.g., `-15° to +15°`
-  - `Zoom`: e.g., `90% to 110%`
-  - `Flip`: Optional horizontal/vertical mirroring
+* **Resize:** Enable and set a resize percentage.
+* **Aspect Ratio:** Crop the image to a fixed ratio (e.g., 1:1, 16:9) after resizing.
+* **Rotation and Flipping:** Enter a rotation angle and/or choose to flip the image.
 
-### Step 4: Execute and Relax
+### **4. Augmentation Options**
 
-- Click **Execute**
-- Choose the destination folder
-- The script will generate your augmented dataset automatically.
+These effects are applied to make each copy unique.
 
-When finished, you’ll have a full folder of AI-ready training images!
+* Check the box for an effect to activate it.
+* Set the parameters (e.g., blur radius, noise amount, etc.).
+
+**Note:** Unlike other scripts that use Min/Max ranges, here most values are fixed. Randomness is primarily introduced by the **Cutout** effect, which generates a crop of ever-changing size and position.
+
+### **5. Output Settings**
+
+* **Augmented copies per image:** Enter the number of copies to create for each source file.
+* **Filename Prefix/Suffix:** Define a prefix and/or suffix to be added to the generated filenames (e.g., IMG\_01.jpg -> prefix\_IMG\_01\_suffix.jpg).
+* **Save as:** Choose one or more output formats. For JPEG, you can specify the quality.
+
+Once everything is configured, click **Run** (in Photoshop) or **OK** (in GIMP) to start the process. A progress bar will keep you updated, and a final notification will alert you upon completion.
 
 ---
 
