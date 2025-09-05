@@ -32,7 +32,6 @@ The script does not require installation. To run it:
 2. Go to the menu **File > Scripts > Browse...**.
 3. Select the \_Photoshop Image\_Augmentation Processor.jsx file and click **Open**.
 4. The script's dialog window will open, ready to be configured.
-![Script Interface](https://github.com/VicDc/AI-Dataset-Augmenter/blob/3fa61bdd20172d9171b3d8a7e4ad52ff4757d1fc/Image%20Augmentation%20Scripts%20for%20Photoshop%20%26%20GIMP.png)
 
 ## **GIMP (.py)**
 
@@ -62,7 +61,7 @@ An open-source version for GIMP users, written in Python.
 ## **⚙️ Configuration Guide (Identical for Both Versions)**
 
 The interface is divided into 5 sections:
-
+![Script Interface](https://github.com/VicDc/AI-Dataset-Augmenter/blob/3fa61bdd20172d9171b3d8a7e4ad52ff4757d1fc/Image%20Augmentation%20Scripts%20for%20Photoshop%20%26%20GIMP.png)
 ### **1. Source Folder**
 
 * **Browse...:** Select the folder containing the original images.
